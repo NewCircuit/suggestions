@@ -23,7 +23,7 @@ export = class CreateEvent extends Command {
           type: 'string',
         },
         {
-          key: 'review_channel',
+          key: 'reviewChannel',
           prompt: 'The channel I need to send review requests in.',
           type: 'string',
         },
@@ -33,7 +33,7 @@ export = class CreateEvent extends Command {
     });
   }
 
-  async run(msg: CommandoMessage, { name, channel, review_channel }: {name: string, channel: string, review_channel: string}) {
+  async run(msg: CommandoMessage, { name, channel, reviewChannel }: {name: string, channel: string, reviewChannel: string}) {
     const restriction = await selectRestriction(msg);
     const Channel = await getChannel(channel, this.client);
 
@@ -41,7 +41,7 @@ export = class CreateEvent extends Command {
       return msg.reply('Unable to locate that submission channel');
     }
 
-    const reviewChannelFetched = await getChannel(review_channel, this.client);
+    const reviewChannelFetched = await getChannel(reviewChannel, this.client);
 
     if (reviewChannelFetched === undefined) {
       return msg.reply('Unable to locate that review channel');
