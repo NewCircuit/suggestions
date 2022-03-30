@@ -1,8 +1,12 @@
 {
 	"extends": "@sapphire/ts-config",
 	"compilerOptions": {
+		"strict": true,
 		"rootDir": "src",
 		"outDir": "dist",
+		"lib": ["esnext"],
+		"esModuleInterop": true,
+		"sourceMap": true,
 		"tsBuildInfoFile": "dist/.tsbuildinfo"
 	},
 	"include": ["src"]
